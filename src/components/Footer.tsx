@@ -39,13 +39,13 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className="w-full border-t border-zinc-200 bg-white px-6 py-16 dark:border-zinc-800 dark:bg-zinc-950">
+    <footer className="w-full border-t border-white/10 bg-zinc-950 px-6 py-16">
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-6">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2 text-sm font-bold text-zinc-900 dark:text-white">
-              <span className="flex h-6 w-6 items-center justify-center rounded-md bg-zinc-900 text-white dark:bg-white dark:text-zinc-900">
+            <Link href="/" className="flex items-center gap-2 text-sm font-bold text-white">
+              <span className="flex h-6 w-6 items-center justify-center rounded-md bg-white text-zinc-900">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
                   <path d="M11.644 1.59a.75.75 0 0 1 .712 0l9.75 5.25a.75.75 0 0 1 0 1.32l-9.75 5.25a.75.75 0 0 1-.712 0l-9.75-5.25a.75.75 0 0 1 0-1.32l9.75-5.25Z" />
                   <path d="m3.265 10.602 7.668 4.129a2.25 2.25 0 0 0 2.134 0l7.668-4.13 1.37.739a.75.75 0 0 1 0 1.32l-9.75 5.25a.75.75 0 0 1-.712 0l-9.75-5.25a.75.75 0 0 1 0-1.32l1.372-.738Z" />
@@ -54,7 +54,7 @@ export function Footer() {
               </span>
               Startup
             </Link>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-zinc-400">
               Beautiful UI components built with Tailwind CSS and Framer Motion. Ship faster, build better.
             </p>
             {/* Socials */}
@@ -64,7 +64,7 @@ export function Footer() {
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
-                  className="flex h-8 w-8 items-center justify-center rounded-lg border border-zinc-200 text-zinc-500 transition-colors hover:border-zinc-300 hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-white"
+                  className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 text-zinc-400 transition-colors hover:border-white/20 hover:text-white"
                 >
                   {s.icon}
                 </Link>
@@ -75,7 +75,7 @@ export function Footer() {
           {/* Links */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-zinc-900 dark:text-white">
+              <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-white">
                 {category}
               </h3>
               <ul className="flex flex-col gap-3">
@@ -83,7 +83,7 @@ export function Footer() {
                   <li key={link}>
                     <Link
                       href="#"
-                      className="text-sm text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
+                      className="text-sm text-zinc-400 transition-colors hover:text-white"
                     >
                       {link}
                     </Link>
@@ -95,15 +95,15 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-zinc-200 pt-8 sm:flex-row dark:border-zinc-800">
-          <p className="text-sm text-zinc-400 dark:text-zinc-500">
+        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
+          <p className="text-sm text-zinc-500">
             © {new Date().getFullYear()} Startup. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <Link href="#" className="text-sm text-zinc-400 transition-colors hover:text-zinc-900 dark:text-zinc-500 dark:hover:text-white">
+            <Link href="#" className="text-sm text-zinc-500 transition-colors hover:text-white">
               Privacy
             </Link>
-            <Link href="#" className="text-sm text-zinc-400 transition-colors hover:text-zinc-900 dark:text-zinc-500 dark:hover:text-white">
+            <Link href="#" className="text-sm text-zinc-500 transition-colors hover:text-white">
               Terms
             </Link>
           </div>

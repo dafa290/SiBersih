@@ -61,7 +61,7 @@ const features = [
 
 export function FeaturesSection() {
   return (
-    <section className="w-full bg-white px-6 py-24 dark:bg-zinc-950">
+    <section className="w-full bg-zinc-950 px-6 py-24">
       <div className="mx-auto max-w-6xl">
         {/* Header */}
         <motion.div
@@ -71,13 +71,13 @@ export function FeaturesSection() {
           transition={{ duration: 0.5 }}
           className="mb-16 text-center"
         >
-          <span className="mb-4 inline-block rounded-full border border-zinc-200 bg-zinc-50 px-4 py-1.5 text-sm text-zinc-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-400">
+          <span className="mb-4 inline-block rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-zinc-400">
             Features
           </span>
-          <h2 className="mt-4 text-4xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-5xl">
+          <h2 className="mt-4 text-4xl font-bold tracking-tight text-white sm:text-5xl">
             Everything you need
           </h2>
-          <p className="mt-4 text-lg text-zinc-500 dark:text-zinc-400">
+          <p className="mt-4 text-lg text-zinc-400">
             A complete toolkit to build modern web interfaces faster than ever.
           </p>
         </motion.div>
@@ -93,13 +93,13 @@ export function FeaturesSection() {
               transition={{ duration: 0.4, delay: i * 0.07 }}
               className="flex flex-col gap-3"
             >
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-zinc-900 text-zinc-300 border border-white/5">
                 {feature.icon}
               </div>
-              <h3 className="text-base font-semibold text-zinc-900 dark:text-white">
+              <h3 className="text-base font-semibold text-white">
                 {feature.title}
               </h3>
-              <p className="text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
+              <p className="text-sm leading-relaxed text-zinc-400">
                 {feature.description}
               </p>
             </motion.div>
