@@ -1,107 +1,87 @@
 "use client";
 
+import Image from "next/image";
+import { AnimatedButton } from "./AnimatedButton";
+import heroBg from "../../public/hero-image.png";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 export function HeroSection() {
   return (
-    <section className="relative flex min-h-[calc(100vh-80px)] w-full flex-col items-center justify-center overflow-hidden bg-white px-6 py-24 dark:bg-zinc-950">
-      {/* Background grid */}
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.03] dark:opacity-[0.07]"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)",
-          backgroundSize: "48px 48px",
-        }}
-      />
+    <section className="relative w-full flex items-center justify-center min-h-[100svh] overflow-hidden bg-zinc-950">
+      {/* Background Image - uncropped as requested */}
+      <div className="absolute inset-0 w-full h-full flex items-center justify-center">
+        <Image
+          src={heroBg}
+          alt="Hero Background"
+          className="w-full h-full object-contain"
+          priority
+          placeholder="blur"
+        />
+      </div>
+      
+      {/* Overlay gradient for readability */}
+      <div className="absolute inset-0 bg-black/50" />
 
-      {/* Glow blob */}
-      <div className="pointer-events-none absolute left-1/2 top-1/3 h-[500px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-300/20 blur-[120px] dark:bg-violet-600/10" />
-
-      {/* Badge */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="mb-6 flex items-center gap-2 rounded-full border border-zinc-200 bg-zinc-50 px-4 py-1.5 text-sm text-zinc-600 dark:border-zinc-700 dark:bg-zinc-800/50 dark:text-zinc-400"
-      >
-        <span className="h-2 w-2 rounded-full bg-violet-500" />
-        Introducing our new platform
-      </motion.div>
-
-      {/* Headline */}
-      <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        className="max-w-3xl text-center text-5xl font-bold tracking-tight text-zinc-900 sm:text-6xl lg:text-7xl dark:text-white"
-      >
-        Build faster with{" "}
-        <span className="bg-gradient-to-r from-violet-600 to-indigo-500 bg-clip-text text-transparent">
-          beautiful UI
-        </span>
-      </motion.h1>
-
-      {/* Subheadline */}
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="mt-6 max-w-xl text-center text-lg leading-8 text-zinc-500 dark:text-zinc-400"
-      >
-        A modern component library built with Tailwind CSS and Framer Motion.
-        Copy, paste, and ship stunning interfaces in minutes.
-      </motion.p>
-
-      {/* CTA Buttons */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-        className="mt-10 flex flex-wrap items-center justify-center gap-4"
-      >
-        <Link
-          href="/signup"
-          className="rounded-full bg-zinc-900 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:bg-zinc-700 hover:shadow-md dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200"
+      {/* Content Overlay */}
+      <div className="relative z-10 flex flex-col items-center justify-center px-4 text-center w-full max-w-5xl mx-auto py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex flex-col items-center"
         >
-          Get started for free
-        </Link>
-        <Link
-          href="#features"
-          className="flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-6 py-3 text-sm font-semibold text-zinc-700 shadow-sm transition-all hover:border-zinc-300 hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-700"
-        >
-          Learn more
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="h-4 w-4"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-            />
-          </svg>
-        </Link>
-      </motion.div>
+          {/* Badge */}
+          <div className="mt-12 mb-10 sm:mb-12 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs sm:text-sm font-medium text-white backdrop-blur-md shadow-lg">
+            <span className="text-white font-bold mr-2">New</span> POS for everyone <span className="ml-1">→</span>
+          </div>
+          
+          {/* Headline */}
+          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl md:text-7xl lg:text-[5rem] leading-tight drop-shadow-2xl">
+            Seamless Transactions, <br className="hidden sm:block" />
+            Happier Customers
+          </h1>
+          
+          {/* Subheadline */}
+          <p className="mt-6 max-w-2xl text-lg sm:text-xl text-zinc-300 drop-shadow-md">
+            The intelligent point-of-sale system that builds customer loyalty and protects your
+            reputation. Ready to take your customer service to the next level?
+          </p>
+          
+          {/* Buttons */}
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto z-20">
+            <AnimatedButton variant="primary" className="w-full sm:w-auto px-8 py-3.5 text-base">
+              Join Us Today →
+            </AnimatedButton>
+            <AnimatedButton variant="outline" className="w-full sm:w-auto px-8 py-3.5 text-base flex items-center gap-3">
+              <div className="h-6 w-6 rounded-full overflow-hidden border border-white/40">
+                <img src="https://i.pravatar.cc/100?img=11" alt="avatar" className="w-full h-full object-cover" />
+              </div>
+              How it Works 
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-4 h-4 ml-1">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347c-.75.412-1.667-.13-1.667-.986V5.653Z" />
+              </svg>
+            </AnimatedButton>
+          </div>
+          
+          {/* Trusted By */}
+          <div className="mt-20 hidden md:block w-full">
+            <p className="text-xs font-semibold uppercase tracking-widest text-zinc-400 mb-8 drop-shadow-md">
+              Trusted by customers at
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-10 lg:gap-16">
+              {/* AI Logos - CSS filters automatically knock out white backgrounds and turn colors into a clean white/grey silhouette */}
+              <img src="/chatgpt.png" alt="ChatGPT" className="h-8 md:h-10 w-auto object-contain brightness-0 invert opacity-70 transition-opacity hover:opacity-100" />
+              <img src="/deepseek.png" alt="DeepSeek" className="h-8 md:h-10 w-auto object-contain brightness-0 invert opacity-70 transition-opacity hover:opacity-100" />
+              <img src="/gemini.png" alt="Gemini" className="h-8 md:h-10 w-auto object-contain brightness-0 invert opacity-70 transition-opacity hover:opacity-100" />
+              <img src="/qwen.png" alt="Qwen" className="h-8 md:h-10 w-auto object-contain brightness-0 invert opacity-70 transition-opacity hover:opacity-100" />
+            </div>
+          </div>
+        </motion.div>
+      </div>
 
-      {/* Social proof */}
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
-        className="mt-10 text-sm text-zinc-400 dark:text-zinc-500"
-      >
-        Trusted by{" "}
-        <span className="font-semibold text-zinc-600 dark:text-zinc-300">
-          10,000+
-        </span>{" "}
-        developers worldwide
-      </motion.p>
+      {/* Gradient fade to blend into the next section (ShowcaseSection which uses bg-zinc-950) */}
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-zinc-950 to-transparent z-10 pointer-events-none" />
     </section>
   );
 }
