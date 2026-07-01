@@ -37,7 +37,7 @@ export function HeroSection() {
           </div>
           
           {/* Headline */}
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl md:text-7xl lg:text-[5rem] leading-tight drop-shadow-2xl">
+          <h1 className="text-5xl font-black tracking-tighter sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[0.9] uppercase eclipse-text drop-shadow-[0_0_15px_rgba(249,115,22,0.3)] mb-2">
             Seamless Transactions, <br className="hidden sm:block" />
             Happier Customers
           </h1>

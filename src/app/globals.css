@@ -28,3 +28,18 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.eclipse-text {
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #ffffff 52%,
+    #ef4444 52%,
+    #f97316 75%,
+    #eab308 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
