@@ -37,11 +37,17 @@ export function HeroSection() {
           </div>
           
           {/* Headline */}
-          <h1 className="text-center drop-shadow-[0_0_20px_rgba(246,224,181,0.25)] mb-2 flex flex-col items-center">
-            <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium italic tracking-wide elegant-text-top mb-[-0.3em] z-10">
+          <h1 className="text-center drop-shadow-[0_0_20px_rgba(250,214,116,0.3)] mb-2 flex flex-col items-center">
+            <span 
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium italic tracking-wide text-[#fce3a2] drop-shadow-[0_4px_20px_rgba(252,227,162,0.4)] mb-[-0.3em] z-10"
+              style={{ fontFamily: "var(--font-playfair), serif" }}
+            >
               Seamless Transactions,
             </span>
-            <span className="text-7xl sm:text-8xl md:text-9xl lg:text-[9rem] font-normal tracking-tighter leading-[0.8] uppercase elegant-text-bottom">
+            <span 
+              className="text-7xl sm:text-8xl md:text-9xl lg:text-[9rem] font-normal tracking-tighter leading-[0.8] uppercase text-[#fad674] drop-shadow-[0_4px_30px_rgba(250,214,116,0.5)]"
+              style={{ fontFamily: "var(--font-dm-serif), serif" }}
+            >
               Happier<br className="sm:hidden" /> Customers
             </span>
           </h1>
