@@ -37,9 +37,13 @@ export function HeroSection() {
           </div>
           
           {/* Headline */}
-          <h1 className="text-5xl font-black tracking-tighter sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[0.9] uppercase eclipse-text drop-shadow-[0_0_15px_rgba(249,115,22,0.3)] mb-2">
-            Seamless Transactions, <br className="hidden sm:block" />
-            Happier Customers
+          <h1 className="text-center drop-shadow-[0_0_15px_rgba(246,224,181,0.2)] mb-2 flex flex-col items-center">
+            <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium italic tracking-tight elegant-text mb-2">
+              Seamless Transactions,
+            </span>
+            <span className="text-6xl sm:text-7xl md:text-8xl lg:text-[7rem] font-bold tracking-tighter leading-[0.85] uppercase elegant-text">
+              Happier<br className="sm:hidden" /> Customers
+            </span>
           </h1>
           
           {/* Subheadline */}
