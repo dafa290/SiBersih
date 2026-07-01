@@ -16,7 +16,15 @@ const geistMono = Geist_Mono({
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
-  style: ["normal", "italic"],
+  style: ["italic", "normal"],
+});
+
+import { DM_Serif_Display } from "next/font/google";
+
+const dmSerif = DM_Serif_Display({
+  variable: "--font-dm-serif",
+  subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -32,7 +40,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} h-full antialiased dark`}
+      className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${dmSerif.variable} h-full antialiased dark`}
     >
       <body className="min-h-full flex flex-col bg-zinc-950 text-white selection:bg-white/10">
           <ResizableNavbar />

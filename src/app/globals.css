@@ -29,8 +29,14 @@ html {
   scroll-behavior: smooth;
 }
 
-.elegant-text {
+.elegant-text-top {
   font-family: var(--font-playfair), serif;
-  color: #f6e0b5;
-  text-shadow: 0 4px 24px rgba(246, 224, 181, 0.15);
+  color: #fce3a2;
+  text-shadow: 0 4px 30px rgba(252, 227, 162, 0.2);
+}
+
+.elegant-text-bottom {
+  font-family: var(--font-dm-serif), serif;
+  color: #fad674;
+  text-shadow: 0 4px 30px rgba(250, 214, 116, 0.25);
 }
